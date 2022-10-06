@@ -63,11 +63,11 @@ html,
   NAVBAR DESIGN START
 =======================*/
 .navbar{
-  background-color: rgba(218, 211, 211, 0.3);
-  padding: 0 !important;
   top: 0;
   width: 100%;
-  /*position: fixed !important;*/
+  padding: 0 !important;
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid #fff;
   z-index: 999;
 }
 
