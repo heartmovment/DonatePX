@@ -1,17 +1,16 @@
 <?php
-@include 'config.php';
+require_once '../config.php';
+
 
 session_start();
 
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Request Dashboard</title>
+    <title>User Dashboard</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -50,15 +49,17 @@ session_start();
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Hi, <span><?php echo $_SESSION['admin_username'] ?> </h6>
+                        <h6 class="mb-0">Hi, <span><?php echo $_SESSION['admin_username'] ?></h6>
                         <span>Admin</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="admin.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="users.php" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Users</a>
+                    <a href="users.php" class="nav-item nav-link active"><i class="fa fa-users me-2"></i>Users</a>
+                    <!-- <a href="recipient.php" class="nav-item nav-link"><i class="fa fa-users me-2"></i>recipient/a> -->
                     <a href="donation.php" class="nav-item nav-link"><i class="fa fa-hand-holding-heart me-2"></i>Donations</a>
-                    <a href="request.php" class="nav-item nav-link active"><i class="fa fa-handshake-angle me-2"></i>Request</a>
+                    <a href="request.php" class="nav-item nav-link"><i class="fa fa-handshake-angle me-2"></i>Request</a>
+                    <!-- <a href="reports.php" class="nav-item nav-link"><i class="fa fa-chart-pie me-2"></i>Reports</a> -->
                     <a href="profile_setting.php" class="nav-item nav-link"><i class="fa fa-user me-2"></i>Profile</a>
                 </div>
             </nav>
@@ -156,52 +157,125 @@ session_start();
             </nav>
             <!-- Navbar End -->
 
+           
 
-
-
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">list of request</h6>
+            <!-- Donation Information    -->
             
-                    </div> 
-                    <div class="row"> 
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card influencer-profile-data">  
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Firstname</th>
-                                            <th>Lastname</th>
-                                            <th>Email</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>john@example.com</td>
-                                        </tr>
-                                       
-                                    </tbody>
-                                </table>
+            <div class="container-fluid pt-4 px-4">
+
+                
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Add User
+                    </button>
+                    
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Add Users</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
+                                <div class="modal-body">
+                                    
+                                    <form role="form"  method="post" action="add_users.php?action=add" autocomplete="off">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            <input type="text" class="form-control" name="firstname" placeholder="First Name" Required>
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            <input type="text" class="form-control" name="lastname" placeholder="Last Name" Required>
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                                            <input type="email" class="form-control" placeholder="Email"  name="email" Required>
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            <input type="text" class="form-control" placeholder="User Type"  name="user_type" Required>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-info text-white">Save Record</button>
+                                        <!-- <a href="" class="btn btn-info text-white" type="submit" name="submit">Submit</a> -->
+                                        </div>
+                                    
+                                    </form>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-           
-
-           
-
-
+                
+            
+                <div class="bg-secondary text-center rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0"><i class="fa fa-user me-2"></i>Users Information</h6>                  
+                        <a href="">Show All</a>
+                    </div>
+                   
+                    <div class="row"> 
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card influencer-profile-data">
+                                <div class="table-responsive">
+                                    <table class="table text-start align-middle table-hover mb-0">
+                                        <thead>
+                                            <tr class="">
+                                                <!-- <th scope="col">User ID</th>  -->
+                                                <th scope="col">First Name</th>
+                                                <th scope="col">Last Name</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">User Type</th>
+                                                <th scope="col">Date Registered</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                            
+                                        </thead>
+                                        <tbody> 
+                                            <tr>
+                                            <?php                  
+                                                $query = 'SELECT * FROM user_form';
+                                                $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
+                                            
+                                                    while ($row = mysqli_fetch_assoc($result)) {
+                                                    
+                                                        // echo '<td>'. $row['ID'].'</td>';
+                                                        echo '<td>'. $row['firstname'].'</td>';
+                                                        echo '<td>'. $row['lastname'].'</td>';
+                                                        echo '<td>'. $row['email'].'</td>';
+                                                        echo '<td>'. $row['user_type'].'</td>';
+                                                        echo '<td>'. $row['date_created'].'</td>';
+                                                    
+                                                        echo '<td>';
+                                                        echo ' <a  type="button" class="btn btn-xs btn-warning text-white" href="edit_user.php?action=edit & ID='.$row['ID'] . '"> EDIT </a> ';
+                                                        echo ' <a  type="button" class="btn btn-xs btn-danger text-white" href="delete_user.php?type=user_form&delete & ID=' . $row['ID'] . '">DELETE </a> </td>';
+                                                        echo '</tr> ';
+                                            }
+                                        ?> 
+                                        </tbody>
+                                    </table>
+                                </div> 
+                            </div> 
+                        </div>
+                    </div>   
+                </div> 
+            </div>       
+        <!-- Back to Top
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>-->
 
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assests/js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

@@ -3,37 +3,33 @@
     --primary: green;
     --secondary: #191C24;
     --light: #6C7293;
-    --dark: #0000;
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #e3863b;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-primary: #eb1616;
+    --bs-secondary: #191c24;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #6c7293;
+    --bs-dark: #000;
 }
-/* 
-.back-to-top {
-    position: fixed;
-    display: none;
-    right: 45px;
-    bottom: 45px;
-    z-index: 99;
-}
- */
 
-/*** Spinner ***/
-/* #spinner {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
-    z-index: 99999;
-}
-
-#spinner.show {
-    transition: opacity .5s ease-out, visibility 0s linear 0s;
-    visibility: visible;
-    opacity: 1;
-} */
 
 .text-primary {
-    color: green !important;
+    color: var(--bs-orange)!important;
 }
-
-
 /*** Button ***/
 .btn {
     transition: .5s;
@@ -64,6 +60,23 @@
     font-weight: normal;
     border-radius: 50px;
 }
+
+.btn-primary1{
+    color: var(--bs-orange);
+    font-weight: 700;
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+.btn-primary1:hover{
+    background-color: var(--bs-orange) !important;
+    border-color: var(--bs-orange) !important;
+    color: var(--primary) !important;
+}
+
+.bg-green {
+    background-color: var(--bs-green-new) !important;
+  }
+
 
 
 /*** Layout ***/
@@ -121,11 +134,17 @@
     }
 }
 
+@media (min-width: 600px) {
+    body{
+      background-color: #fff !important;
+    }
+  }
+
 
 /*** Navbar ***/
 .sidebar .navbar .navbar-nav .nav-link {
     padding: 7px 20px;
-    color: var(--light);
+    color: var(--primary) !important;
     font-weight: 500;
     border-left: 3px solid var(--secondary);
     border-radius: 0 30px 30px 0;
@@ -134,9 +153,9 @@
 
 .sidebar .navbar .navbar-nav .nav-link:hover,
 .sidebar .navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
-    background: var(--dark);
-    border-color: var(--primary);
+    color: var(--primary) !important;
+    background: var(--bs-orange) !important;
+    border-color: var(--primary) !important;
 }
 
 .sidebar .navbar .navbar-nav .nav-link i {
@@ -151,7 +170,7 @@
 
 .sidebar .navbar .navbar-nav .nav-link:hover i,
 .sidebar .navbar .navbar-nav .nav-link.active i {
-    background: var(--secondary);
+    background: var(--secondary) !important;   
 }
 
 .sidebar .navbar .dropdown-toggle::after {
@@ -175,23 +194,27 @@
     color: var(--light);
 }
 
-.sidebar .navbar .dropdown-item:hover,
+
+/* .sidebar .navbar .dropdown-item:hover,
 .sidebar .navbar .dropdown-item.active {
-    background: var(--dark);
-}
+    background: var(--dark) !important;
+} */
 
 .content .navbar .navbar-nav .nav-link {
     margin-left: 25px;
     padding: 12px 0;
-    color: var(--light);
+    color: var(--primary) !important;
     outline: none;
 }
 
-.content .navbar .navbar-nav .nav-link:hover,
-.content .navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
+.content .navbar .navbar-nav .nav-link:hover{
+    
+    color: var(--bs-orange) !important;
+   
 }
-
+.content .navbar .navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+}
 .content .navbar .sidebar-toggler,
 .content .navbar .navbar-nav .nav-link i {
     width: 40px;
@@ -231,35 +254,3 @@
         margin-left: 15px;
     }
 }
-
-
-/*** Testimonial ***
-.progress .progress-bar {
-    width: 0px;
-    transition: 2s;
-}*/
-
-
-/*** Testimonial ***
-.testimonial-carousel .owl-dots {
-    margin-top: 24px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-.testimonial-carousel .owl-dot {
-    position: relative;
-    display: inline-block;
-    margin: 0 5px;
-    width: 15px;
-    height: 15px;
-    border: 5px solid var(--primary);
-    border-radius: 15px;
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-dot.active {
-    background: var(--dark);
-    border-color: var(--primary);
-}*/

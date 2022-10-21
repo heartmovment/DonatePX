@@ -26,6 +26,7 @@
     --bs-danger: #dc3545;
     --bs-light: #6c7293;
     --bs-dark: #000;
+    --bs-green-new: green;
     --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
       "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
       "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -85,7 +86,7 @@
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     line-height: 1.2;
-    color: #fff;
+    color: var(--bs-orange);
   }
   h1,
   .h1 {
@@ -203,11 +204,11 @@
     top: -0.5em;
   }
   a {
-    color: #eb1616;
+    color: var(--bs-orange) !important;
     text-decoration: none;
   }
   a:hover {
-    color: #bc1212;
+    color: var(--bs-green-new);
   }
   a:not([href]):not([class]),
   a:not([href]):not([class]):hover {
@@ -325,7 +326,7 @@
   [type="button"],
   [type="reset"],
   [type="submit"] {
-    -webkit-appearance: button;
+    --webkit-appearance: button;
   }
   button:not(:disabled),
   [type="button"]:not(:disabled),
@@ -376,10 +377,10 @@
   }
   [type="search"] {
     outline-offset: -2px;
-    -webkit-appearance: textfield;
+    --webkit-appearance: textfield;
   }
   ::-webkit-search-decoration {
-    -webkit-appearance: none;
+    --webkit-appearance: none;
   }
   ::-webkit-color-swatch-wrapper {
     padding: 0;
@@ -389,7 +390,7 @@
   }
   ::-webkit-file-upload-button {
     font: inherit;
-    -webkit-appearance: button;
+    --webkit-appearance: button;
   }
   output {
     display: inline-block;
@@ -1818,7 +1819,7 @@
     font-weight: 400;
     line-height: 1.5;
     color: #6c7293;
-    background-color: #000;
+    background-color: #fff !important;
     background-clip: padding-box;
     border: 1px solid #000;
     appearance: none;
@@ -1839,9 +1840,9 @@
   .form-control:focus {
     color: #6c7293;
     background-color: #000;
-    border-color: #f58b8b;
+    border-color: var(--bs-orange);
     outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(235, 22, 22, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(240, 142, 6, 0.25);
   }
   .form-control::-webkit-date-and-time-value {
     height: 1.5em;
@@ -3943,6 +3944,7 @@
   }
   .navbar-dark .navbar-nav .nav-link.disabled {
     color: rgba(255, 255, 255, 0.25);
+    
   }
   .navbar-dark .navbar-nav .show > .nav-link,
   .navbar-dark .navbar-nav .nav-link.active {
@@ -4060,6 +4062,7 @@
   .card-img-top,
   .card-img-bottom {
     width: 100%;
+    
   }
   .card-img,
   .card-img-top {

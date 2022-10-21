@@ -1,17 +1,16 @@
-<?php
-@include 'config.php';
+
+<?php 
+@include '../config.php';
 
 session_start();
 
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Request Dashboard</title>
+    <title>User Dashboard</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -56,9 +55,11 @@ session_start();
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="admin.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="users.php" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Users</a>
+                    <a href="users.php" class="nav-item nav-link active"><i class="fa fa-user me-2"></i>Users</a>
+                    <!-- <a href="recipient.php" class="nav-item nav-link"><i class="fa fa-users me-2"></i>recipient/a> -->
                     <a href="donation.php" class="nav-item nav-link"><i class="fa fa-hand-holding-heart me-2"></i>Donations</a>
-                    <a href="request.php" class="nav-item nav-link active"><i class="fa fa-handshake-angle me-2"></i>Request</a>
+                    <a href="request.php" class="nav-item nav-link"><i class="fa fa-handshake-angle me-2"></i>Request</a>
+                    <!-- <a href="reports.php" class="nav-item nav-link"><i class="fa fa-chart-pie me-2"></i>Reports</a> -->
                     <a href="profile_setting.php" class="nav-item nav-link"><i class="fa fa-user me-2"></i>Profile</a>
                 </div>
             </nav>
@@ -156,52 +157,77 @@ session_start();
             </nav>
             <!-- Navbar End -->
 
+        <div class="container col-lg-6 bg-secondary text-center rounded p-4 mt-5">
+                
 
+                <?php
 
+                $query = 'SELECT * FROM user_form WHERE ID ='.$_GET['ID'];
+                                $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
+                            while($row = mysqli_fetch_array($result))
+                            {   
+                                $uID= $row['ID'];
+                                $fname= $row['firstname'];
+                                $lname=$row['lastname'];
+                                $email=$row['email'];
+                                $user_type=$row['user_type'];
+                                $password=$row['password'];
+                                
+                            
+                            }
+                            
+                            $ID = $_GET['ID'];
+                        
+                ?>
 
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">list of request</h6>
-            
-                    </div> 
-                    <div class="row"> 
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card influencer-profile-data">  
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Firstname</th>
-                                            <th>Lastname</th>
-                                            <th>Email</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>john@example.com</td>
-                                        </tr>
-                                       
-                                    </tbody>
-                                </table>
+                    <div class="col-lg-12">
+                        <h2>Edit Records</h2>
+                            <div class="col-md-12">
+
+                            <form role="form" method="post" action="edit1.php">
+                                
+                                <div class="form-group mb-2">
+                                    <input type="hidden" name="id" value="<?php echo $uID; ?>" />
                                 </div>
-                            </div>
+                                <div class="form-group mb-2">
+                                    <input class="form-control" placeholder="First Name" name="firstname" value="<?php echo $fname; ?>">
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input class="form-control" placeholder="Last Name" name="lastname" value="<?php echo $lname; ?>">
+                                </div> 
+                                <div class="form-group mb-2">
+                                    <input class="form-control" placeholder="Email" name="email" value="<?php echo $email; ?>">
+                                </div> 
+                                <div class="form-group mb-2">
+                                    <input  class="form-control" placeholder="User Type" name="user_type" value="<?php echo $user_type; ?>">
+                                </div> 
+                                <div class="form-group mb-3">
+                                    <input type="hidden" class="form-control" placeholder="" name="password" value="<?php echo $password; ?>">
+                                </div>
+                                <div class="form-group mb-3">
+                                    
+                                <button type="submit" class="btn btn-info">Update Record</button>
+                                </div>
+                            </form>  
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
-           
-
-           
 
 
 
 
+
+         </div>  
+         
+         
+        
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assests/js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
+       

@@ -3,9 +3,7 @@
 
 session_start();
 
-if(!isset($_SESSION['admin_firstname'])){
-    header('location:login_form.php');
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -36,11 +34,7 @@ if(!isset($_SESSION['admin_firstname'])){
     <!-- CSS -->
     <link href="admin.css" rel="stylesheet">
 
-    <script>
-      $(window).load(function(){
-        $().UItoTop({ easingType: 'easeOutQuad' });
-      })
-  </script>
+    
 </head>
 
 <body>
@@ -58,26 +52,17 @@ if(!isset($_SESSION['admin_firstname'])){
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Hi, <span><?php echo $_SESSION['admin_firstname'] ?> </h6>
+                        <h6 class="mb-0">Hi, <span><?php echo $_SESSION['admin_username'] ?></h6>
                         <span>Admin</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="admin.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="donor.php" class="nav-item nav-link"><i class="fa fa-user me-2"></i>Donor</a>
-                    <a href="recipient.php" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Recipient</a>
-                    <a href="donation.php" class="nav-item nav-link"><i class="fa fa-hand-holding-heart me-2"></i>Donation</a>
+                    <a href="users.php" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Users</a>
+                    <!-- <a href="recipient.php" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Users</a> -->
+                    <a href="donation.php" class="nav-item nav-link"><i class="fa fa-hand-holding-heart me-2"></i>Donations</a>
                     <a href="request.php" class="nav-item nav-link"><i class="fa fa-handshake-angle me-2"></i>Request</a>
                     <a href="reports.php" class="nav-item nav-link active"><i class="fa fa-chart-pie me-2"></i>Reports</a>
-                    <!--<div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="signin.html" class="dropdown-item">Sign In</a>
-                            <a href="signup.html" class="dropdown-item">Sign Up</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
-                            <a href="blank.html" class="dropdown-item">Blank Page</a>
-                        </div>
-                    </div>-->
                 </div>
             </nav>
         </div>
@@ -94,9 +79,7 @@ if(!isset($_SESSION['admin_firstname'])){
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
-                </form>
+                
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -266,137 +249,11 @@ if(!isset($_SESSION['admin_firstname'])){
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>-->
     
     
-    <!---==========FOOTER CONTENT START==========-->
-        <section class="text-white py-5">
-        <footer class="text-center text-lg-start bg-dark">
-        <!-- Section: Links  -->
-    <section class="footer">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              <!--<i class="fas fa-gem me-3">-->
-              <i class="fa fa-hand-holding-heart"></i>
-              </i>Donate PX
-            </h6>
-            <p>
-              Starting non-profit organization that collaborates with volunteers to deliver
-              humanitarian aid and disaster relief to vulnerable communities.
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Donation
-            </h6>
-            <p>
-              <a href="#!" class="text-reset">About Us</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Ongoing Events</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Contact Us</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Careers</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Quick links
-            </h6>
-            <p>
-              <a href="#!" class="text-reset">Work With Us</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Who We Are?</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">About Us</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Latest Stories</a>
-            </p>
-          </div>
-              <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-              <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-              <p><i class="fas fa-home me-3"></i> Metro Manila, NCR-PH</p>
-              <p><i class="fas fa-envelope me-3"></i>wd9pgroup2@kodego.com.ph</p>
-              <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-              <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-          </div>
-          <!-- Grid column -->
-        </div>
-          <!-- Grid row -->
-      </div>
-    </section>  
-    <div class="container">
-      <div class="container p-4 pb-0 text-center">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-              <!-- Facebook -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                 ><i class="fab fa-facebook-f"></i
-                ></a>
     
-              <!-- Twitter -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                 ><i class="fab fa-twitter"></i
-                ></a>
-    
-              <!-- Google -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                 ><i class="fab fa-google"></i
-                ></a>
-    
-              <!-- Instagram -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                 ><i class="fab fa-instagram"></i
-                ></a>
-    
-              <!-- Linkedin -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                 ><i class="fab fa-linkedin-in"></i
-                ></a>
-    
-              <!-- Github -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                 ><i class="fab fa-github"></i
-                ></a>
-            </section>
-            <!-- Section: Social media -->
-      </div>
-          <!-- Grid container -->
-    
-          <!-- Copyright -->
-          <div class="text-center p-3 text-muted" style="background-color: rgba(0, 0, 10, 0.2);">
-            © 2022 WD9P-AGILE|DESIGN BY:
-            <a class="text" style="color: #ff6112;" href="#">GROUP-2 CAPSTONE PROJECT</a>
-          </div>
-          <!-- Copyright -->
-    </div>
-    </footer>
-</div>
-
-
-<!---==========FOOTER CONTENT END==========-->
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assests/easing/easing.js"></script>
-    <script src="../assests/easing/easing.min.js"></script>
     <script src="../assests/js/main.js"></script>
 </body>
 
