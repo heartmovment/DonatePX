@@ -1,0 +1,370 @@
+<?php
+@include_once '../config.php';
+
+session_start();
+
+if (!isset($_SESSION['donor_firstname'])) {
+  header('location:./login_form.php');
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate PX</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="../customcss/styleindex.css" />
+  <!---GoogleFonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins&display=swap" rel="stylesheet" />
+  <!--Bootsrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!---Animated CSS-->
+  <link rel="stylesheet" type="text/css" href="../customcss/animate.css" />
+
+</head>
+
+<body>
+  <!---==========NAVBAR CONTENT START==========-->
+  <div id="don-wrapper">
+    <div id="don-page">
+      <div class="header-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 text-left head-link">
+              <h6 class="mb-0">Hi,
+                <span><?php echo $_SESSION['donor_firstname'] ?> </span>
+                <a href="http://localhost/donatePX/logout.php" class="grow btn" type=submit>
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                </a>
+              </h6>
+
+
+            </div>
+            <div class="col-md-6 col-sm-6 text-right fa-social">
+              <a href="donor_index.php" class="text-light" style="list-style: none;">Go To Dashboard</a>
+              <a href="#" class="grow"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="grow"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="grow"><i class="fab fa-instagram"></i></a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.php">
+            <img src="../images/rsz_1rsz_donatepx-removebg-preview.png" alt="" /></a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item" style="color: #ff6112">
+                <a class="nav-link" aria-current="page" href="index.php">Home</a>
+              </li>
+              <!-- <li class="nav-item">
+              <a class="nav-link" href="calamity.php">Calamity</a>
+            </li> -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Events
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="">Calamities</a></li>
+                  <li><a class="dropdown-item" href="calamity-post.php">Fundraising Campain</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.php">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="faqs.php">FAQs</a>
+              </li>
+
+
+
+              <li class="nav-item">
+                <a class="nav-link" href="contact-us.php">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!---==========NAVBAR CONTENT END==========-->
+
+      <!---==========MAIN CONTENT START==========-->
+
+      <div class="don-hero">
+        <div class="don-overlay"></div>
+        <div class="don-cover text-center" data-stellar-background-ratio="0.5">
+          <div class="desc animated fadeInUp">
+            <h2><strong>Extend</strong> a helping <strong>hand</strong></h2>
+            <span><a class="btn" href="">Welcome <?php echo $_SESSION['donor_firstname'] ?> </a></span>
+          </div>
+        </div>
+      </div>
+
+      <!---------------------------------------------------->
+      <section class="project-area section-gap" id="project">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-8 pb-80 header-text">
+              <h1>Waiting for Help</h1>
+              <!-- <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> labore  et dolore magna aliqua.
+            </p> -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-4 project-wrap">
+              <div class="single-project">
+                <div class="content">
+                  <a href="#" target="_blank">
+                    <div class="content-overlay"></div>
+                    <img class="content-image img-fluid d-block mx-auto" src="../images/fire-disaster.jpg" alt="">
+                    <div class="content-details fadeIn-bottom">
+                      <a href="#" class="head-btn btn text-uppercase">Donate Now</a>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="details">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Fire in QC</h5>
+                    <p class="card-text">A fire occured last September 2, 2022 at around 2:00 in the morning that affects more than 200 families.</p>
+                    <a href="#" class="btn btn-success">See details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 project-wrap">
+              <div class="single-project">
+                <div class="content">
+                  <a href="#" target="_blank">
+                    <div class="content-overlay"></div>
+                    <img class="content-image img-fluid d-block mx-auto" src="../images/yhen.jpg" alt="">
+                    <div class="content-details fadeIn-bottom">
+                      <a href="register_form.php" class="head-btn btn text-uppercase">Donate Now</a>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="details">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">A little help for my Grandma</h5>
+                    <p class="card-text">Hello, I would like to ask for help for my grandma who's currently admitted at Gumaca District
+                      Hospital due...
+                    </p>
+                    <a href="#" class="btn btn-success">See details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 project-wrap">
+              <div class="single-project">
+                <div class="content">
+                  <a href="#" target="_blank">
+                    <div class="content-overlay"></div>
+                    <img class="content-image img-fluid d-block mx-auto" src="../images/flood-disaster.jpg" alt="">
+                    <div class="content-details fadeIn-bottom">
+                      <a href="" class="head-btn btn text-uppercase">Donate Now</a>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="details">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Victims of typhoon Karding</h5>
+                    <p class="card-text">Recently, a lot of residents in San Miguel Bulacan where affected by typhoon Karding.</p>
+                    <a href="#" class="btn btn-success">See details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- End project Area -->
+      <!---------------------------------------------------->
+      <div id="don-feature-product" class="don-section-gray mb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center heading-section animated fadeInUp">
+              <h3>Giving is Virtue.</h3>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+          </div>
+
+          <div class="row row-bottom-padded-md">
+            <div class="col-md-12 text-center animated fadeInUp">
+              <p><img src="../images/chitto-cancio-i02U7tjG0SI-unsplash.jpg" alt="Free unsplash images" class="img-fluid"></p>
+            </div>
+            <div class="col-md-6 text-center  animated fadeInUp">
+              <p><img src="../images/larm-rmah-AEaTUnvneik-unsplash.jpg" alt="Free unsplash images" class="img-fluid"></p>
+            </div>
+            <div class="col-md-6 text-center  animated fadeInUp">
+              <p><img src="../images/rainier-ridao-CmqDCnI_ByM-unsplash.jpg" alt="Free unsplash images" class="img-fluid"></p>
+            </div>
+          </div>
+          <div class="row  animated fadeInUp ">
+            <div class="col-md-4">
+              <div class="feature-text">
+                <h3>Love</h3>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-text">
+                <h3>Compassion</h3>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-text">
+                <h3>Charity</h3>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-------------------------------==========MAIN CONTENT END==========--------------------------------->
+
+
+      <!---------------------------==========FOOTER CONTENT START==========------------------------------>
+      <footer class="text-center text-lg-start bg-dark">
+        <!-- Section: Links  -->
+        <section class="footer">
+          <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto ">
+                <!-- Content -->
+                <h6 class="text-uppercase fw-bold mb-4">
+
+                  <i class="fa fa-hand-holding-heart"></i>
+                  Donate PX
+                </h6>
+                <p>
+                  Starting non-profit organization that collaborates with
+                  volunteers to deliver humanitarian aid and disaster relief to
+                  vulnerable communities.
+                </p>
+
+                <div class="col">
+                  <h6>Sign up for our newsletter</h6>
+                  <form action="" method="" class="mb-3">
+                    <input type="text" name="" class="form-label" placeholder="Enter your email address">
+
+                    <button type="submit" class="btn btn-outline-light">
+                      Subscribe
+                    </button>
+                  </form>
+                </div>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">Quick links</h6>
+                <p>
+                  <a href="about.php" class="text-reset">About Us</a>
+                </p>
+                <p>
+
+                </p>
+                <p>
+                  <a href="contact-us.php" class="text-reset">Contact Us</a>
+                </p>
+
+              </div>
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">Usefull links</h6>
+                <p>
+                  <a href="donor_index.php" class="text-reset">Go To Dashboard</a>
+                </p>
+                <p>
+                  <a href="contact-us.php" class="text-reset">Work With Us</a>
+                </p>
+                <p>
+                  <a href="about.php" class="text-reset">Who We Are?</a>
+                </p>
+
+
+              </div>
+              <!-- Grid column -->
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                <p><i class="fas fa-home me-3"></i> Metro Manila, NCR-PH</p>
+                <p>
+                  <i class="fas fa-envelope me-3"></i>wd9pgroup2@kodego.com.ph
+                </p>
+                <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+          </div>
+        </section>
+        <div class="container">
+          <div class="container p-4 pb-0 text-center">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+              <!-- Facebook -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+              <!-- Twitter -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+              <!-- Google -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+              <!-- Instagram -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+              <!-- Linkedin -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+
+              <!-- Github -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+          </div>
+          <!-- Grid container -->
+
+          <!-- Copyright -->
+          <div class="text-center p-3 text-muted" style="background-color: rgba(0, 0, 10, 0.2)">
+            © 2022 WD9P-AGILE|DESIGN BY:
+            <a class="text" style="color: #ff6112" href="#">GROUP-2 CAPSTONE PROJECT</a>
+          </div>
+          <!-- Copyright -->
+        </div>
+      </footer>
+
+      <!---==========FOOTER CONTENT END==========-->
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="./js/main.js"> </script>
+</body>
+
+</html>
