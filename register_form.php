@@ -3,15 +3,15 @@
 @include 'config.php';
 
 if(isset($_POST['submit'])){
-
+  
   $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
   $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
   $email = mysqli_real_escape_string($conn, $_POST['email']);
   $password = md5($_POST['password']);
-  $cpassword = md5($_POST['confirmpassword']);
-  $user_type = $_POST['user_type'];
+  $confirm_password = md5($_POST['confirm_password']);
+  //$user_type = $_POST['user_type'];
 
-  $select = " SELECT * FROM user_form WHERE firstname = '$firstname' && lastname = '$lastname' && email = '$email' && password = '$password' ";
+  $select = " SELECT * FROM user_form WHERE firstname = '$firstname' && lastname = '$lastname' && email = '$email' && password = '$password' && confirm_password = '$confirm_password' ";
   
   $result = mysqli_query($conn, $select);
 
@@ -20,10 +20,12 @@ if(isset($_POST['submit'])){
     $error[] = 'User already exist!';
   }
   else{
-    if($password != $cpassword){
+    if($password != $confirm_password){
+
     $error[] = 'Password does not match!';
+    
     }else{
-      $insert = "INSERT INTO user_form(firstname, lastname, email, password, user_type) VALUES('$firstname','$lastname','$email','$password','$user_type')";
+      $insert = "INSERT INTO user_form(firstname, lastname, email, password, confirm_password) VALUES('$firstname','$lastname','$email','$password', '$confirm_password')";
       mysqli_query($conn, $insert);
       
       header('location:login_form.php');
@@ -49,7 +51,7 @@ if(isset($_POST['submit'])){
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins&display=swap" rel="stylesheet">
 <!--Bootsrap-->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
 <style>
@@ -60,7 +62,7 @@ if(isset($_POST['submit'])){
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('/donatePX/assests/images/img-slider1.jpg');
+    background-image: url('./images/img-slider1.jpg');
     background-repeat: no-repeat !important;
     background-size: cover;
     background-position: center;
@@ -102,9 +104,10 @@ if(isset($_POST['submit'])){
         <h1 class="my-5 display-3 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)"> 
           <span>Charity is an</span> <br> 
           <span style="color: hsl(218, 81%, 75%)">Act of A Soft Heart</span> 
-        </h1> <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+        </h1> 
+        <!-- <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, expedita iusto veniam atque, magni tempora mollitia dolorum consequatur nulla, neque debitis eos reprehenderit quasi ab ipsum nisi dolorem modi. Quos?
-              </p> 
+              </p>  -->
       </div> 
       <div class="col-lg-6 mb-5 mb-lg-0 position-relative"> 
         <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong">
@@ -159,25 +162,25 @@ if(isset($_POST['submit'])){
                   </div>  
                 </div> 
               </div>
-              <div class="row">  <!-- Password input --> 
+              <div class="row">  <!-- CPassword input --> 
                 <div class="col-md-12 mb-4">
                   <div class="form-outline"> 
-                    <input type="password" id="confirmpassword" class="form-control" name="confirmpassword" placeholder="Enter confirm password" required> 
+                    <input type="password" id="confirmpassword" class="form-control" name="confirm_password" placeholder="Enter confirm password" required> 
                     
                   </div>  
                 </div> 
               </div>
-              <div class="row">  <!-- Password input --> 
+              <!-- <div class="row"> 
                 <div class="col-md-12 mb-4">
                   <div class="form-outline"> 
                     <select name="user_type" required>
-                      <option value="recipient">Recipient</option>
+                      <option value="admin">Admin</option>
                       <option value="donor">donor</option>
                     </select> 
                     
                   </div>  
                 </div> 
-              </div>
+              </div> -->
 
               <div class="row">  <!-- terms and condition --> 
                 <div class="col-md-12 mb-4">
@@ -189,7 +192,7 @@ if(isset($_POST['submit'])){
               </div>
               
               <!-- Submit button --> 
-              <button type="submit" name="submit"class="btn  btn-primary btn-block mb-4" >Registered</button>
+              <button type="submit" name="submit" class="btn  btn-primary btn-block mb-4" >Registered</button>
               <a href="login_form.php" class="btn btn-primary btn-block mb-4"><span>Login</span></a>
               <!-- <button type="submit" class="btn  btn-primary btn-block mb-4" >Login</button>  -->
               <!-- Register buttons --> 
@@ -208,13 +211,6 @@ if(isset($_POST['submit'])){
   </div> 
 
   <!---==========MAIN CONTENT END==========-->
-
-
-
-
-  
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -5,15 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donate PX</title>
-    
-    
-    <link rel="stylesheet" type="text/css" href="assests/customcss/styleindex.css"/>
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
-    
+    <link rel="stylesheet" type="text/css" href="./customcss/styleindex.css" />
     <!---GoogleFonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,10 +21,11 @@
     <!--Bootsrap-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-      crossorigin="anonymous"
-    />
+      rel="stylesheet"/>
+
+    <!---Animated CSS-->
+    <link rel="stylesheet" type="text/css" href="./customcss/animate.css" />
+
   </head>
 
   <style>
@@ -90,11 +88,29 @@
   </style>
   <body>
     <!---==========NAVBAR CONTENT START==========-->
+    <div id="don-wrapper">
+      <div id="don-page">
+      <div class="header-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 text-left head-link">
+              <a href="faqs.html">FAQ's</a>
+              <a href="contact-us.html">Contact</a>
+              <a href="login_form.php">Login</a>
+            </div>
+            <div class="col-md-6 col-sm-6 text-right fa-social">
+              <a href="#" class="grow"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="grow"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="grow"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>  
+        </div>
+      </div>
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
           <img
-            src="/assests/images/rsz_1rsz_donatepx-removebg-preview.png"
+            src="./images/rsz_1rsz_donatepx-removebg-preview.png"
             alt=""
         /></a>
 
@@ -112,36 +128,20 @@
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-            <!-- Icon dropdown -->
-            <!-- <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i class="fas fa-user"></i>
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a class="dropdown-item" href="login.html">Login</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="register.html">Sign Up</a>
-                </li>
-
-                <li>
-                  <a class="dropdown-item" href="#">Donate</a>
-                </li>
-              </ul>
-            </li> -->
             <li class="nav-item" style="color: #ff6112">
               <a class="nav-link" aria-current="page" href="index.html">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Calamity</a>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="calamity.html">Calamity</a>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Events
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Calamities</a></li>
+                <li><a class="dropdown-item" href="calamity-post.html">Fundraising Campain</a></li>
+              </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
@@ -149,6 +149,9 @@
             <li class="nav-item">
               <a class="nav-link" href="faqs.html">FAQs</a>
             </li>
+
+            
+
             <li class="nav-item">
               <a class="nav-link" href="contact-us.html">Contact Us</a>
             </li>
@@ -157,9 +160,10 @@
       </div>
     </nav>
     <!---==========NAVBAR CONTENT END==========-->
+    
     <!---==========MAIN CONTENT START==========-->
 
-    <div class="container accordion accordion-flush" id="">
+    <div class="container accordion accordion-flush mb-5" id="">
       <h3 class="text-faqs">FAQs</h3>
       <h1 class="text-faq">Frequently Asked Questions</h1>
       <br />
@@ -309,193 +313,159 @@
 
       <!---==========MAIN CONTENT END==========-->
 
-      <!---==========FOOTER CONTENT START==========-->
-      <!---==========FOOTER CONTENT START==========-->
-    <section class="text-white py-5">
-      <form action="">
-        <!--Grid row-->
-        <div class="row d-flex justify-content-center m-0">
-          <!--Grid column-->
-          <div class="col-auto">
-            <p class="pt-2">
-              <strong>Sign up for our newsletter</strong>
-            </p>
-          </div>
-          <!--Grid column-->
+      <!---------------------------==========FOOTER CONTENT START==========------------------------------>
+    <footer class="text-center text-lg-start bg-dark">
+      <!-- Section: Links  -->
+      <section class="footer">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto ">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                
+                <i class="fa fa-hand-holding-heart"></i>
+                Donate PX
+              </h6>
+              <p>
+                Starting non-profit organization that collaborates with
+                volunteers to deliver humanitarian aid and disaster relief to
+                vulnerable communities.
+              </p>
 
-          <!--Grid column-->
-          <div class="col-md-5 col-12">
-            <!-- Email input -->
-            <div class="form-outline form-white">
-              <input
-                type="email"
-                id="emailadd"
-                class="form-control"
-                placeholder="Email address"
-              />
-              <label class="form-label" for="emailadd"></label>
+              <div class="col">
+                <h6>Sign up for our newsletter</h6>
+                <form action="" method="" class="mb-3">
+                  <input type="text" name="" class="form-label" placeholder="Enter your email address">
+
+                  <button type="submit" class="btn btn-outline-light">
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+
             </div>
-          </div>
-          <!--Grid column-->
+            <!-- Grid column -->
 
-          <!--Grid column-->
-          <div class="col-auto">
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-outline-light mb-4">
-              Subscribe
-            </button>
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Quick links</h6>
+              <p>
+                <a href="about.html" class="text-reset">About Us</a>
+              </p>
+              <p>
+              
+              </p>
+              <p>
+                <a href="contact-us.html" class="text-reset">Contact Us</a>
+              </p>
+             
+            </div>
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Usefull links</h6>
+              <p>
+                <a href="login_form.php" class="text-reset">Go To Dashboard</a>
+              </p>
+              <p>
+                <a href="contact-us.html" class="text-reset">Work With Us</a>
+              </p>
+              <p>
+                <a href="about.html" class="text-reset">Who We Are?</a>
+              </p>
+              
+              
+            </div>
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p><i class="fas fa-home me-3"></i> Metro Manila, NCR-PH</p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>wd9pgroup2@kodego.com.ph
+              </p>
+              <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+              <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+            </div>
+            <!-- Grid column -->
           </div>
-          <!--Grid column-->
+          <!-- Grid row -->
         </div>
-        <!--Grid row-->
-      </form>
-    </section>
-      <footer class="text-center text-lg-start bg-dark">
-        <!-- Section: Links  -->
-        <section class="footer">
-          <div class="container text-center text-md-start mt-5">
-            <!-- Grid row -->
-            <div class="row mt-3">
-              <!-- Grid column -->
-              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                <!-- Content -->
-                <h6 class="text-uppercase fw-bold mb-4">
-                  <!--<i class="fas fa-gem me-3">-->
-                  <i class="fa fa-hand-holding-heart"></i>Donate PX
-                </h6>
-                <p>
-                  Starting non-profit organization that collaborates with
-                  volunteers to deliver humanitarian aid and disaster relief to
-                  vulnerable communities.
-                </p>
-              </div>
-              <!-- Grid column -->
+      </section>
+      <div class="container">
+        <div class="container p-4 pb-0 text-center">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a
+              class="btn btn-outline-light btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
 
-              <!-- Grid column -->
-              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase fw-bold mb-4">Donation</h6>
-                <p>
-                  <a href="#!" class="text-reset">About Us</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">Ongoing Events</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">Contact Us</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">Careers</a>
-                </p>
-              </div>
-              <!-- Grid column -->
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase fw-bold mb-4">Quick links</h6>
-                <p>
-                  <a href="#!" class="text-reset">Work With Us</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">Who We Are?</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">About Us</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">Latest Stories</a>
-                </p>
-              </div>
-              <!-- Grid column -->
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                <p><i class="fas fa-home me-3"></i> Metro Manila, NCR-PH</p>
-                <p>
-                  <i class="fas fa-envelope me-3"></i>wd9pgroup2@kodego.com.ph
-                </p>
-                <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-              </div>
-              <!-- Grid column -->
-            </div>
-            <!-- Grid row -->
-          </div>
-        </section>
-        <div class="container">
-          <div class="container p-4 pb-0 text-center">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-              <!-- Facebook -->
-              <a
-                class="btn btn-outline-light btn-floating m-1"
-                href="#!"
-                role="button"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
+            <!-- Twitter -->
+            <a
+              class="btn btn-outline-light btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-twitter"></i
+            ></a>
 
-              <!-- Twitter -->
-              <a
-                class="btn btn-outline-light btn-floating m-1"
-                href="#!"
-                role="button"
-                ><i class="fab fa-twitter"></i
-              ></a>
+            <!-- Google -->
+            <a
+              class="btn btn-outline-light btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-google"></i
+            ></a>
 
-              <!-- Google -->
-              <a
-                class="btn btn-outline-light btn-floating m-1"
-                href="#!"
-                role="button"
-                ><i class="fab fa-google"></i
-              ></a>
+            <!-- Instagram -->
+            <a
+              class="btn btn-outline-light btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-instagram"></i
+            ></a>
 
-              <!-- Instagram -->
-              <a
-                class="btn btn-outline-light btn-floating m-1"
-                href="#!"
-                role="button"
-                ><i class="fab fa-instagram"></i
-              ></a>
+            <!-- Linkedin -->
+            <a
+              class="btn btn-outline-light btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
 
-              <!-- Linkedin -->
-              <a
-                class="btn btn-outline-light btn-floating m-1"
-                href="#!"
-                role="button"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
+            <!-- Github -->
+            <a
+              class="btn btn-outline-light btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-github"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
 
-              <!-- Github -->
-              <a
-                class="btn btn-outline-light btn-floating m-1"
-                href="#!"
-                role="button"
-                ><i class="fab fa-github"></i
-              ></a>
-            </section>
-            <!-- Section: Social media -->
-          </div>
-          <!-- Grid container -->
-
-          <!-- Copyright -->
-          <div
-            class="text-center p-3 text-muted"
-            style="background-color: rgba(0, 0, 10, 0.2)"
+        <!-- Copyright -->
+        <div
+          class="text-center p-3 text-muted"
+          style="background-color: rgba(0, 0, 10, 0.2)"
+        >
+          © 2022 WD9P-AGILE|DESIGN BY:
+          <a class="text" style="color: #ff6112" href="#"
+            >GROUP-2 CAPSTONE PROJECT</a
           >
-            © 2022 WD9P-AGILE|DESIGN BY:
-            <a class="text" style="color: #ff6112" href="#"
-              >GROUP-2 CAPSTONE PROJECT</a
-            >
-          </div>
-          <!-- Copyright -->
         </div>
-      </footer>
+        <!-- Copyright -->
+      </div>
+    </footer>
 
-      <!---==========FOOTER CONTENT END==========-->
-
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-      ></script>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"> </script>
   </body>
 </html>

@@ -9,32 +9,38 @@ if(isset($_POST['login'])){
   $email = trim($_POST['email']);
   $password = trim($_POST['password']);
 
+
   $sqlValidate = " SELECT * FROM user_form WHERE email = '$email' AND password = md5('$password') ";
   
   $result = mysqli_query($conn, $sqlValidate);
+
+ 
+
 
   if(mysqli_num_rows($result) > 0){
      
     $row = mysqli_fetch_array($result);
 
+   
+
     if($row['user_type'] == 'donor'){
 
       $_SESSION['donor_firstname'] = $row['firstname'];
-      header('location:./donor/donor_profile.php');
+      header('location:./donor/index.php');
 
-    }elseif($row['user_type'] == 'recipient'){
+    // }elseif($row['user_type'] == 'recipient'){
 
-      $_SESSION['recipient_firstname'] = $row['firstname'];
-      header('location:./recipient/recipient_profile.php');
+    //   $_SESSION['recipient_firstname'] = $row['firstname'];
+    //   header('location:./recipient/index.php');
 
-    }elseif($row['user_type'] == 'admin'){
+    // }elseif($row['user_type'] == 'admin'){
 
-      $_SESSION['admin_firstname'] = $row['firstname'];
-      header('location:./Admin/admin.php');
+    //   $_SESSION['admin_firstname'] = $row['firstname'];
+    //   header('location:./Admin/index.php');
 
     }
   }else{
-    $error[] = 'incorrect email or password!';
+    $error[] = 'Incorrect email or password!';
   }
 };
 ?>
@@ -45,10 +51,10 @@ if(isset($_POST['login'])){
 
 
 <head>
-<!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Donate PX</title>
+
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
@@ -57,7 +63,7 @@ if(isset($_POST['login'])){
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins&display=swap" rel="stylesheet">
 <!--Bootsrap-->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
@@ -75,7 +81,7 @@ if(isset($_POST['login'])){
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('/donatePX/assests/images/img-slider1.jpg');
+    background-image: url('./images/img-slider1.jpg');
     background-repeat: no-repeat !important;
     background-size: cover;
     background-position: center;
@@ -100,7 +106,7 @@ if(isset($_POST['login'])){
       align-content: center;
     }
 
-    /* Height for devices larger than 576px */
+   
     @media (min-width: 992px) {
       #intro {
         margin-top: 0;

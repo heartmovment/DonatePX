@@ -6,6 +6,6 @@ $conn = mysqli_connect('localhost', 'root', '', 'user_db');
 //     echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
 //     exit();
 //   } else {
-//     echo 'nice';
+//     echo 'connection stablished!';
 //   }
 ?>

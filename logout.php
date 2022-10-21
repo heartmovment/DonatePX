@@ -6,6 +6,6 @@ session_start();
 session_unset();
 session_destroy();
 
-header('location:http://localhost/donatePX/login_form.php');
+header('location:http://localhost/donatePX/index.html');
 
 ?>
